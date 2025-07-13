@@ -2,8 +2,15 @@
 
 int main()
 {
-    int x;
+    int x, y = 0;
     scanf("%d", &x);
-    printf("%03d%02d", x % 1000, x / 1000);
+start:
+    if (x >= 1000)
+    {
+        x = x - 1000;
+        y = y + 1;
+        goto start;
+    }
+    printf("%03d%02d", x, y);
     return 0;
 }
